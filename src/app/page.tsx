@@ -1,5 +1,6 @@
 'use client';
 import { TheAccordion } from '@/components/TheAccordion';
+import TheHeroComponent from '@/components/TheHeroComponent';
 import TheNavbar from '@/components/TheNavbar';
 import { useRef } from 'react';
 
@@ -11,7 +12,7 @@ export default function Home() {
       <TheNavbar accordionRef={accordionRef} />
 
       <main className="flex flex-col gap-4 pt-20">
-        <h1>Kompyuterni professionallardan o&apos;rganing!</h1>
+        <TheHeroComponent />
         {/* Other content */}
 
         {/* Accordion Section with Ref */}
