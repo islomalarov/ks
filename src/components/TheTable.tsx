@@ -12,9 +12,11 @@ import {
 } from '@/components/ui/table';
 
 type RowData = string[];
+
 const TheTable = () => {
   const [data, setData] = useState<RowData[]>([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -28,9 +30,8 @@ const TheTable = () => {
       }
     };
 
-    fetchData();
+    fetchData()
   }, []);
-  console.log(data);
 
   return (
     <div id="table" className="max-w-2xl mx-auto">
