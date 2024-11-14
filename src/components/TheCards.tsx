@@ -56,7 +56,7 @@ export function TheCards({ className, ...props }: CardProps) {
   return (
     <div id="tariflar" className="grid items-center gap-3">
       <h2 className="text-center font-bold text-3xl">Tariflar</h2>
-      <p className="text-center">O'zingiz uchun qulay tarifni tanlang:</p>
+      <p className="text-center">O`&apos;zingiz uchun qulay tarifni tanlang:</p>
       <div className="flex flex-wrap gap-4 justify-center">
         {tariffs.map((tariff, index) => (
           <Card
@@ -77,7 +77,7 @@ export function TheCards({ className, ...props }: CardProps) {
             </CardContent>
             <CardFooter>
               <Button className="w-full">
-                <Check /> Qo'shilish
+                <Check /> Qo`&apos;shilish
               </Button>
             </CardFooter>
           </Card>
