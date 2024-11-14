@@ -1,14 +1,23 @@
 import { motion } from 'framer-motion';
-
-const TheHeroComponent = () => {
+import { RefObject } from 'react';
+interface TheHeroComponentProps {
+  sectionRef: RefObject<HTMLDivElement>;
+}
+const TheHeroComponent = ({ sectionRef }: TheHeroComponentProps) => {
+  const scrollToSection = () => {
+    if (sectionRef.current) {
+      // Check if current exists
+      sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <div className="flex flex-col items-center justify-center h-screen dark:bg-black-900 dark:text-white px-4">
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-4xl md:text-6xl font-bold text-center">
-        Добро пожаловать в мир IT
+        className="text-3xl md:text-6xl font-bold text-center">
+        Kompyuterni professionallardan o&lsquo;rganing!
       </motion.h1>
 
       <motion.p
@@ -16,8 +25,8 @@ const TheHeroComponent = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
         className="text-lg md:text-xl mt-4 text-center max-w-2xl">
-        Осваивайте навыки программирования и технологий будущего с помощью современных инструментов
-        и анимаций
+        4 yillik tajribaga ega ustozdan sifatli ta&lsquo;lim olish imkoniyatini qo&lsquo;ldan boy
+        bermang!
       </motion.p>
 
       <motion.div
@@ -28,8 +37,9 @@ const TheHeroComponent = () => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
+          onClick={scrollToSection}
           className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-lg">
-          Начать обучение
+          Kursga qo&lsquo;shilish
         </motion.button>
       </motion.div>
     </div>

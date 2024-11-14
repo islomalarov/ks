@@ -29,10 +29,10 @@ const Data = [
   },
 ];
 
-export const TheAccordion = () => {
+const TheAccordion = () => {
   return (
-    <Accordion id="faqs" type="single" collapsible className="w-full">
-      <h2>Ko&apos;p beriladigan savollar</h2>
+    <Accordion id="faqs" type="single" collapsible>
+      <h2 className="text-4xl text-center">Ko&apos;p beriladigan savollar</h2>
       {Data.map((data) => (
         <AccordionItem key={data.title} value={data.title}>
           <AccordionTrigger>{data.title}</AccordionTrigger>
@@ -42,3 +42,5 @@ export const TheAccordion = () => {
     </Accordion>
   );
 };
+
+export default TheAccordion;
