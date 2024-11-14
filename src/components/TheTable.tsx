@@ -30,11 +30,11 @@ const TheTable = () => {
       }
     };
 
-    fetchData()
+    fetchData();
   }, []);
 
   return (
-    <div id="table" className="max-w-2xl mx-auto">
+    <div id="table" className="max-w-4xl mx-auto overflow">
       <h2 className="text-4xl font-bold text-center pb-4">Video kursimizning o&apos;quv dasturi</h2>
       <Table>
         <TableCaption>Vaqt o&apos;tishi bilan mavzular soni oshib boryapti. </TableCaption>
@@ -49,13 +49,17 @@ const TheTable = () => {
         ) : data.length > 0 ? (
           data.map((row, rowIndex) =>
             rowIndex === 0 ? (
-              <TableHeader key={rowIndex}>
-                <TableRow className="font-bold">
+              <TableHeader key={rowIndex} className="text-md">
+                <TableRow>
                   {row.map((cell, cellIndex) => (
                     <TableHead
                       key={cellIndex}
                       className={
-                        cellIndex === 0 ? 'text-left' : cellIndex > 3 ? 'text-right' : 'text-center'
+                        cellIndex === 0
+                          ? 'text-left t'
+                          : cellIndex > 3
+                          ? 'text-right'
+                          : 'text-center'
                       }>
                       {cell}
                     </TableHead>

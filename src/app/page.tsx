@@ -1,6 +1,7 @@
 'use client';
 
 import TheAccordion from '@/components/TheAccordion';
+import { TheCards } from '@/components/TheCards';
 import TheHeroComponent from '@/components/TheHeroComponent';
 import TheStepsComponent from '@/components/TheStepsComponent';
 import TheTable from '@/components/TheTable';
@@ -15,6 +16,7 @@ export default function Home() {
         <TheHeroComponent sectionRef={stepsRef} />
         <TheStepsComponent sectionRef={stepsRef} />
         <TheTable />
+        <TheCards />
         <TheAccordion />
       </main>
     </div>

@@ -46,9 +46,9 @@ const TheStepsComponent = ({ sectionRef }: TheStepsComponentProps) => {
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 text-white text-lg font-semibold">
                 {step.number}
               </span>
-              {index < steps.length - 1 && (
+              {/* {index < steps.length - 1 && (
                 <div className="absolute top-10 h-full w-px bg-gray-300 left-1/2 -translate-x-1/2"></div>
-              )}
+              )} */}
             </div>
             <div className="">
               <h3 className="text-xl font-bold">{step.title}</h3>

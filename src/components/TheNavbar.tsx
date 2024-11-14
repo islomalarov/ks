@@ -11,7 +11,7 @@ const TheNavbar = () => {
     { id: 1, title: 'Kurs haqida', link: '/' },
     { id: 2, title: "O'quv Dasturi", link: '#table' },
     { id: 3, title: 'Ustoz haqida', link: '#services' },
-    { id: 4, title: 'Tariflar', link: '#experience' },
+    { id: 4, title: 'Tariflar', link: '#tariflar' },
     { id: 5, title: 'FAQ', link: '#faqs' },
   ];
 
@@ -33,7 +33,11 @@ const TheNavbar = () => {
         {openMenu && (
           <nav className="flex flex-col gap-10 justify-center items-center absolute top-0 left-0 w-full h-screen bg-white dark:bg-black ">
             {links.map(({ id, title, link }) => (
-              <Link href={link} key={id} className="capitalize  hover:scale-105  duration-200">
+              <Link
+                href={link}
+                key={id}
+                onClick={() => setOpenMenu(false)}
+                className="capitalize  hover:scale-105  duration-200">
                 {title}
               </Link>
             ))}
