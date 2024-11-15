@@ -34,7 +34,7 @@ const TheTable = () => {
   }, []);
 
   return (
-    <div id="table" className="max-w-4xl mx-auto overflow">
+    <div id="table" className="max-w-4xl md:mx-auto">
       <h2 className="text-4xl font-bold text-center pb-4">Video kursimizning o&apos;quv dasturi</h2>
       <Table>
         <TableCaption>Vaqt o&apos;tishi bilan mavzular soni oshib boryapti. </TableCaption>
