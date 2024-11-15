@@ -3,8 +3,8 @@ import { google } from 'googleapis';
 export async function getGoogleSheetData(sheetId: string, range: string) {
   const auth = new google.auth.GoogleAuth({
     credentials: {
-      client_email: process.env.GOOGLE_CLIENT_EMAIL,
-      private_key: process.env.GOOGLE_PRIVATE_KEY,
+      client_email: process.env.GCP_SERVICE_ACCOUNT_EMAIL,
+      private_key: process.env.GCP_PRIVATE_KEY,
     },
     scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
   });
