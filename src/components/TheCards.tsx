@@ -10,11 +10,13 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+// import { Separator } from '@/components/ui/separator';
+import TheTitle from './TheTitle';
 
 const tariffs = [
   {
     title: 'Mustaqil',
-    description: "150 000 so'm",
+    price: "150 000 so'm",
     lessons: [
       { decription: 'Videodarslar (+yangi)', includes: true },
       { decription: 'Darsga oid dastur va qo’llanmalar', includes: true },
@@ -26,7 +28,7 @@ const tariffs = [
   },
   {
     title: 'Sinov+',
-    description: "200 000 so'm",
+    price: "200 000 so'm",
     lessons: [
       { decription: 'Videodarslar (+yangi)', includes: true },
       { decription: 'Darsga oid dastur va qo’llanmalar', includes: true },
@@ -38,7 +40,7 @@ const tariffs = [
   },
   {
     title: 'Ustoz+ ',
-    description: "300 000 so'm",
+    price: "300 000 so'm",
     lessons: [
       { decription: 'Videodarslar (+yangi)', includes: true },
       { decription: 'Darsga oid dastur va qo’llanmalar', includes: true },
@@ -55,8 +57,8 @@ type CardProps = React.ComponentProps<typeof Card>;
 export function TheCards({ className, ...props }: CardProps) {
   return (
     <div id="tariflar" className="grid items-center gap-3">
-      <h2 className="text-center font-bold text-3xl">Tariflar</h2>
-      <p className="text-center">O`&apos;zingiz uchun qulay tarifni tanlang:</p>
+      <TheTitle title="Tariflar" />
+      <p className="text-center">O&apos;zingiz uchun qulay tarifni tanlang:</p>
       <div className="flex flex-wrap gap-4 justify-center">
         {tariffs.map((tariff, index) => (
           <Card
@@ -65,12 +67,17 @@ export function TheCards({ className, ...props }: CardProps) {
             {...props}>
             <CardHeader className="text-center">
               <CardTitle>{tariff.title}</CardTitle>
-              <CardDescription>{tariff.description}</CardDescription>
+              <CardDescription>{tariff.price}</CardDescription>
+              {/* <Separator /> */}
             </CardHeader>
-            <CardContent className="grid gap-4">
+            <CardContent className="grid gap-4 ">
               {tariff.lessons.map((lesson, lessonIndex) => (
-                <div key={lessonIndex} className="flex gap-4 ">
-                  {lesson.includes ? <Check size={24} /> : <X className="text-slate-400" />}
+                <div key={lessonIndex} className="flex gap-4 items-center">
+                  {lesson.includes ? (
+                    <Check className="text-green-500 text-2xl " />
+                  ) : (
+                    <X className="text-red-500" />
+                  )}
                   <CardDescription>{lesson.decription}</CardDescription>
                 </div>
               ))}

@@ -1,5 +1,6 @@
 import { RefObject } from 'react';
-
+import TheTitle from './TheTitle';
+import { Separator } from './ui/separator';
 interface TheStepsComponentProps {
   sectionRef: RefObject<HTMLDivElement>;
 }
@@ -32,28 +33,27 @@ const TheStepsComponent = ({ sectionRef }: TheStepsComponentProps) => {
 
   return (
     <div ref={sectionRef} className="flex flex-col items-center justify-center gap-8">
-      <h2 className="text-2xl font-bold text-center">
-        Kursga qanday qo&apos;shilsam bo&apos;ladi?
-      </h2>
+      <TheTitle title="Kursga qanday qo'shilsam bo'ladi?" />
+
       <p className="text-center text-lg ">
         Bizning kursimizga qo&apos;shilish ketma-ketligi quyidagicha:
       </p>
 
       <div className="relative md:max-w-2xl flex flex-col gap-12">
         {steps.map((step, index) => (
-          <div key={index} className={`flex items-start gap-4 `}>
-            <div className="relative">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 text-white text-lg font-semibold">
-                {step.number}
-              </span>
-              {/* {index < steps.length - 1 && (
-                <div className="absolute top-10 h-full w-px bg-gray-300 left-1/2 -translate-x-1/2"></div>
-              )} */}
+          <div key={index} className="grid gap-3">
+            <div className="grid justify-items-center gap-4 md:flex items-center">
+              <div className="relative">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 text-white text-lg font-semibold">
+                  {step.number}
+                </span>
+              </div>
+              <div className="text-center md:text-left">
+                <h3 className="text-xl font-bold">{step.title}</h3>
+                <p className="">{step.description}</p>
+              </div>
             </div>
-            <div className="">
-              <h3 className="text-xl font-bold">{step.title}</h3>
-              <p className="">{step.description}</p>
-            </div>
+            <Separator />
           </div>
         ))}
       </div>
