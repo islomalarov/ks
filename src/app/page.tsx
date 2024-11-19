@@ -6,6 +6,7 @@ import { TheCarousel } from '@/components/TheCarousel';
 import TheHeroComponent from '@/components/TheHeroComponent';
 import TheStepsComponent from '@/components/TheStepsComponent';
 import TheTable from '@/components/TheTable';
+import TheTutor from '@/components/TheTutor';
 import { useRef } from 'react';
 
 export default function Home() {
@@ -17,6 +18,8 @@ export default function Home() {
         <TheHeroComponent sectionRef={stepsRef} />
         <TheCarousel />
         <TheTable />
+        <TheTutor />
+        <div className="relative z-10 "></div>
         <TheStepsComponent sectionRef={stepsRef} />
         <TheCards />
         <TheAccordion />

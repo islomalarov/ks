@@ -10,8 +10,8 @@ const TheNavbar = () => {
   const links = [
     { id: 1, title: 'Kurs haqida', link: '/' },
     { id: 2, title: "O'quv Dasturi", link: '#table' },
-    { id: 3, title: 'Ustoz haqida', link: '#services' },
-    { id: 4, title: 'Tariflar', link: '#tariflar' },
+    { id: 3, title: 'Ustoz haqida', link: '#tutor' },
+    { id: 4, title: 'Tariflar', link: '#tariffs' },
     { id: 5, title: 'FAQ', link: '#faqs' },
   ];
 

@@ -56,7 +56,7 @@ type CardProps = React.ComponentProps<typeof Card>;
 
 export function TheCards({ className, ...props }: CardProps) {
   return (
-    <div id="tariflar" className="grid items-center gap-3">
+    <div id="tariffs" className="grid items-center gap-3">
       <TheTitle title="Tariflar" />
       <p className="text-center">O&apos;zingiz uchun qulay tarifni tanlang:</p>
       <div className="flex flex-wrap gap-4 justify-center">

@@ -8,24 +8,33 @@ import {
 
 const Data = [
   {
-    title: 'What is Frontend Mentor, and how will it help me?',
+    title: "Kurs qay tartibda o'tiladi?",
     content:
-      "Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.",
+      "O'quv rejasi asosidagi videodarslar telegramdagi kanallarga joylangan. Siz kursni xarid qilganingizdan so'ng o'zingizga qulay vaqt va qurilma orqali videolarni ko'rib, test va topshiriqlarni ishlashingiz mumkin.",
   },
   {
-    title: 'Is Frontend Mentor free?',
+    title: "Kurs uchun nechi oy to'lov qilishim kerak?",
     content:
-      'Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels.',
+      "Bizning kurs uchun to'lovni bir marotaba qilasiz. Kurs doirasida yangi videolar yozilsa barcha o'quvchilarga ko'rinadi.",
   },
   {
-    title: 'Can I use Frontend Mentor projects in my portfolio?',
+    title: 'Qancha vaqtda kursni tugataman?',
     content:
-      "Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers!",
+      "Kursimiz videodarslar asosida bo'lganligi sababli videolar tegishli kanallarga yuklab, o'rganish uchun tayyor qilib qo'yilgan. Siz istagan vaqtingizda kursga qo'shilib, o'zingizga bog'liq muddatda kursni yakunlashingiz mumkin.",
   },
   {
-    title: "How can I get help if I'm stuck on a Frontend Mentor challenge?",
+    title: 'Kurs oxirida sertifikat beriladimi?',
     content:
-      "The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members.",
+      "Umuman olganda kursni yakunlaganlarga sertifikat berish reja qilinmagan, sababi berilgan sertifikat tan olinmagandan keyin undan nima foyda? Shu sababli biz ko'proq ko'nikma berishga harakat qilamiz.",
+  },
+  {
+    title: "Kursni tugatsam nimalarga ega bo'laman?",
+    content:
+      "Siz kursni to'liq yakunlash orqali \"Men kompyuterni yaxshi bilaman!\" deb aytadigan natijaga erishasiz, inshaalloh. O'qish va ishda kompyuterga oid masalalarni o'zingiz mustaqil hal qilishga erishasiz.",
+  },
+  {
+    title: "Kurs bo'yicha qo'shimcha savollarim bor edi...",
+    content: "Kurs bo'yicha qo'shimcha savollaringiz bo'lsa Telegramda ustozga yozishingiz mumkin.",
   },
 ];
 
