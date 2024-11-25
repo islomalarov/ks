@@ -10,8 +10,9 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-// import { Separator } from '@/components/ui/separator';
+import { Separator } from '@/components/ui/separator';
 import TheTitle from './TheTitle';
+import Link from 'next/link';
 
 const tariffs = [
   {
@@ -56,9 +57,9 @@ type CardProps = React.ComponentProps<typeof Card>;
 
 export function TheCards({ className, ...props }: CardProps) {
   return (
-    <div id="tariffs" className="grid items-center gap-3">
+    <div id="tariffs" className="target grid items-center gap-3">
       <TheTitle title="Tariflar" />
-      <p className="text-center">O&apos;zingiz uchun qulay tarifni tanlang:</p>
+      <p className="text-center text-xl">O&apos;zingiz uchun qulay tarifni tanlang:</p>
       <div className="flex flex-wrap gap-4 justify-center">
         {tariffs.map((tariff, index) => (
           <Card
@@ -66,9 +67,9 @@ export function TheCards({ className, ...props }: CardProps) {
             className={cn('max-w-[320px] shadow-black dark:shadow-white', className)}
             {...props}>
             <CardHeader className="text-center">
-              <CardTitle>{tariff.title}</CardTitle>
+              <CardTitle className="text-xl">{tariff.title}</CardTitle>
               <CardDescription>{tariff.price}</CardDescription>
-              {/* <Separator /> */}
+              <Separator />
             </CardHeader>
             <CardContent className="grid gap-4 ">
               {tariff.lessons.map((lesson, lessonIndex) => (
@@ -83,9 +84,11 @@ export function TheCards({ className, ...props }: CardProps) {
               ))}
             </CardContent>
             <CardFooter>
-              <Button className="w-full">
-                <Check /> Qo`&apos;shilish
-              </Button>
+              <Link href="https://t.me/wmteam95" target="_blank" className="w-full">
+                <Button className="w-full">
+                  <Check /> Qo`&apos;shilish
+                </Button>
+              </Link>
             </CardFooter>
           </Card>
         ))}

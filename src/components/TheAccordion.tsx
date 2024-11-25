@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
+import TheTitle from './TheTitle';
 
 const Data = [
   {
@@ -40,12 +41,12 @@ const Data = [
 
 const TheAccordion = () => {
   return (
-    <Accordion id="faqs" type="single" collapsible>
-      <h2 className="text-4xl text-center">Ko&apos;p beriladigan savollar</h2>
+    <Accordion id="faqs" className="target" type="single" collapsible>
+      <TheTitle title="Ko'p beriladigan savollar" />
       {Data.map((data) => (
         <AccordionItem key={data.title} value={data.title}>
-          <AccordionTrigger>{data.title}</AccordionTrigger>
-          <AccordionContent>{data.content}</AccordionContent>
+          <AccordionTrigger className="text-xl">{data.title}</AccordionTrigger>
+          <AccordionContent className="text-xl">{data.content}</AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>

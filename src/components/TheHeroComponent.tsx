@@ -24,7 +24,7 @@ const TheHeroComponent = ({ sectionRef }: TheHeroComponentProps) => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        className="text-lg md:text-xl mt-4 text-center max-w-2xl">
+        className="text-xl mt-4 text-center max-w-2xl">
         4 yillik tajribaga ega ustozdan sifatli ta&lsquo;lim olish imkoniyatini qo&lsquo;ldan boy
         bermang!
       </motion.p>
@@ -38,7 +38,7 @@ const TheHeroComponent = ({ sectionRef }: TheHeroComponentProps) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToSection}
-          className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-lg">
+          className="px-8 py-4 text-xl bg-blue-600 text-white font-semibold rounded-lg shadow-lg">
           Kursga qo&lsquo;shilish
         </motion.button>
       </motion.div>

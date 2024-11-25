@@ -35,7 +35,7 @@ const TheTable = () => {
   }, []);
 
   return (
-    <div id="table" className="max-w-4xl md:mx-auto">
+    <div id="table" className="target max-w-4xl md:mx-auto">
       <TheTitle title="Video kursimizning o'quv dasturi" />
       <Table>
         <TableCaption>Vaqt o&apos;tishi bilan mavzular soni oshib boryapti. </TableCaption>

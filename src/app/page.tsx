@@ -3,6 +3,7 @@
 import TheAccordion from '@/components/TheAccordion';
 import { TheCards } from '@/components/TheCards';
 import { TheCarousel } from '@/components/TheCarousel';
+import TheCourse from '@/components/TheCoure';
 import TheHeroComponent from '@/components/TheHeroComponent';
 import TheStepsComponent from '@/components/TheStepsComponent';
 import TheTable from '@/components/TheTable';
@@ -16,10 +17,10 @@ export default function Home() {
     <div className="font-[family-name:var(--font-geist-sans)] max-w-6xl mx-auto px-4">
       <main className="flex flex-col gap-12 pt-20">
         <TheHeroComponent sectionRef={stepsRef} />
+        <TheCourse />
         <TheCarousel />
         <TheTable />
         <TheTutor />
-        <div className="relative z-10 "></div>
         <TheStepsComponent sectionRef={stepsRef} />
         <TheCards />
         <TheAccordion />

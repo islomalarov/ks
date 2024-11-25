@@ -32,10 +32,10 @@ const TheStepsComponent = ({ sectionRef }: TheStepsComponentProps) => {
   ];
 
   return (
-    <div ref={sectionRef} className="flex flex-col items-center justify-center gap-8">
+    <div ref={sectionRef} className="target flex flex-col items-center justify-center gap-8">
       <TheTitle title="Kursga qanday qo'shilsam bo'ladi?" />
 
-      <p className="text-center text-lg ">
+      <p className="text-center text-xl">
         Bizning kursimizga qo&apos;shilish ketma-ketligi quyidagicha:
       </p>
 
@@ -44,13 +44,13 @@ const TheStepsComponent = ({ sectionRef }: TheStepsComponentProps) => {
           <div key={index} className="grid gap-3">
             <div className="grid justify-items-center gap-4 md:flex items-center">
               <div className="relative">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 text-white text-lg font-semibold">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 text-white text-xl font-semibold">
                   {step.number}
                 </span>
               </div>
               <div className="text-center md:text-left">
                 <h3 className="text-xl font-bold">{step.title}</h3>
-                <p className="">{step.description}</p>
+                <p className="text-xl">{step.description}</p>
               </div>
             </div>
             <Separator />

@@ -5,19 +5,19 @@ import tutor from '../../public/tutor.webp';
 
 const TheTutor = () => {
   return (
-    <div id="tutor" className="mx-auto">
+    <div id="tutor" className="target mx-auto">
       <TheTitle title="Ustoz haqida" />
       <div className="grid justify-items-center gap-5 text-center max-w-md">
         <Image src={tutor} alt="tutor" className="rounded-xl object-cover" />
-        <h2>Valijon Maxmudov</h2>
-        <p>
+        <h2 className="text-xl ">Valijon Maxmudov</h2>
+        <p className="text-xl ">
           2020-yildan{' '}
           <Link href="https://t.me/kompyuter_akademiyasi" target="_blank" className="underline">
             Kompyuter Akademiyasi
           </Link>
           ga asos solish asosida kompyuter va IT sohalarida dars berishga kirib kelganman.
         </p>
-        <p>
+        <p className="text-xl ">
           Hozirga qadar{' '}
           <Link href="https://t.me/ka_projects/90" target="_blank" className="underline">
             10 dan ortiq loyihalar

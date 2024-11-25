@@ -2,14 +2,15 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+
 import TheActions from './TheActions';
 
 const TheNavbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
 
   const links = [
-    { id: 1, title: 'Kurs haqida', link: '/' },
-    { id: 2, title: "O'quv Dasturi", link: '#table' },
+    { id: 1, title: 'Kurs haqida', link: '#course' },
+    { id: 2, title: "O'quv dasturi", link: '#table' },
     { id: 3, title: 'Ustoz haqida', link: '#tutor' },
     { id: 4, title: 'Tariflar', link: '#tariffs' },
     { id: 5, title: 'FAQ', link: '#faqs' },
@@ -23,7 +24,7 @@ const TheNavbar = () => {
         </Link>
         <nav className="hidden md:flex gap-4">
           {links.map(({ id, title, link }) => (
-            <Link key={id} href={link} className="capitalize hover:scale-105  duration-200">
+            <Link key={id} href={link} className="font-bold text-xl hover:scale-105  duration-200">
               {title}
             </Link>
           ))}
@@ -36,8 +37,12 @@ const TheNavbar = () => {
               <Link
                 href={link}
                 key={id}
+                // to={link}
+                // smooth={true}
+                // offset={-80} // Учитываем высоту навбара
+                // duration={500}
                 onClick={() => setOpenMenu(false)}
-                className="capitalize  hover:scale-105  duration-200">
+                className="capitalize text-xl  hover:scale-105  duration-200">
                 {title}
               </Link>
             ))}
