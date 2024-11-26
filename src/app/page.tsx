@@ -14,7 +14,7 @@ export default function Home() {
   const stepsRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="font-[family-name:var(--font-geist-sans)] max-w-6xl mx-auto px-4">
+    <div className="font-[family-name:var(--font-geist-sans)] max-w-5xl mx-auto px-4">
       <main className="flex flex-col gap-12 pt-20">
         <TheHeroComponent sectionRef={stepsRef} />
         <TheCourse />

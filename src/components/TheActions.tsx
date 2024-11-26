@@ -11,11 +11,11 @@ const TheActions = ({ openMenu, setOpenMenu }: TheActionsProps) => {
       <Link
         href="https://t.me/wmteam95"
         target="_blank"
-        className="hidden md:flex bg-blue-600 text-white text-center rounded-lg shadow-lg py-1 px-3 ">
+        className="hidden lg:flex bg-blue-600 text-white text-center rounded-lg shadow-lg py-1 px-3 ">
         O&apos;rganishni boshlash!
       </Link>
       <ModeToggle />
-      <div className="md:hidden z-10">
+      <div className="lg:hidden z-10">
         {openMenu ? (
           <CircleX onClick={() => setOpenMenu(!openMenu)} size={30} />
         ) : (

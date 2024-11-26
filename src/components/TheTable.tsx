@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -35,10 +34,9 @@ const TheTable = () => {
   }, []);
 
   return (
-    <div id="table" className="target max-w-4xl md:mx-auto">
+    <div id="table" className="target  ">
       <TheTitle title="Video kursimizning o'quv dasturi" />
       <Table>
-        <TableCaption>Vaqt o&apos;tishi bilan mavzular soni oshib boryapti. </TableCaption>
         {loading ? (
           <TableBody>
             <TableRow>
@@ -55,13 +53,7 @@ const TheTable = () => {
                   {row.map((cell, cellIndex) => (
                     <TableHead
                       key={cellIndex}
-                      className={
-                        cellIndex === 0
-                          ? 'text-left t'
-                          : cellIndex > 3
-                          ? 'text-right'
-                          : 'text-center'
-                      }>
+                      className={cellIndex === 0 ? 'text-left' : 'text-center'}>
                       {cell}
                     </TableHead>
                   ))}
@@ -69,15 +61,13 @@ const TheTable = () => {
               </TableHeader>
             ) : (
               <TableBody key={rowIndex}>
-                <TableRow>
+                <TableRow className={`${rowIndex === data.length - 1 && 'font-bold'}`}>
                   {row.map((cell, cellIndex) => (
                     <TableCell
                       key={cellIndex}
                       className={
                         cellIndex === 0 || cell === `Tez orada qo'shiladi!`
                           ? 'text-left'
-                          : cellIndex > 3
-                          ? 'text-right'
                           : 'text-center'
                       }
                       colSpan={cell === `Tez orada qo'shiladi!` ? 2 : 0}>

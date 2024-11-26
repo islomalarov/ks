@@ -11,7 +11,7 @@ const TheHeroComponent = ({ sectionRef }: TheHeroComponentProps) => {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center h-screen dark:bg-black-900 dark:text-white px-4">
+    <div className="flex flex-col items-center justify-center h-screen dark:bg-black-900 dark:text-white">
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}

@@ -2,12 +2,15 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-
 import TheActions from './TheActions';
-
+import { motion } from 'framer-motion';
 const TheNavbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
-
+  const menuVariants = {
+    hidden: { opacity: 0, height: 0 },
+    visible: { opacity: 1, height: '100vh' },
+    exit: { opacity: 0, height: 0 },
+  };
   const links = [
     { id: 1, title: 'Kurs haqida', link: '#course' },
     { id: 2, title: "O'quv dasturi", link: '#table' },
@@ -18,11 +21,11 @@ const TheNavbar = () => {
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white dark:bg-black  h-20 z-10">
-      <div className="max-w-6xl mx-auto px-4 flex gap-2 h-full justify-between items-center ">
+      <div className="max-w-5xl mx-auto px-4 flex gap-2 h-full justify-between items-center ">
         <Link href="/" className="text-3xl font-bold z-10">
           KS
         </Link>
-        <nav className="hidden md:flex gap-4">
+        <nav className="hidden lg:flex gap-4">
           {links.map(({ id, title, link }) => (
             <Link key={id} href={link} className="font-bold text-xl hover:scale-105  duration-200">
               {title}
@@ -32,21 +35,23 @@ const TheNavbar = () => {
         <TheActions openMenu={openMenu} setOpenMenu={setOpenMenu} />
 
         {openMenu && (
-          <nav className="flex flex-col gap-10 justify-center items-center absolute top-0 left-0 w-full h-screen bg-white dark:bg-black ">
+          <motion.nav
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={menuVariants}
+            transition={{ duration: 0.3 }}
+            className="flex flex-col gap-10 justify-center text-center absolute top-0 right-0 w-full bg-white dark:bg-black">
             {links.map(({ id, title, link }) => (
               <Link
                 href={link}
                 key={id}
-                // to={link}
-                // smooth={true}
-                // offset={-80} // Учитываем высоту навбара
-                // duration={500}
                 onClick={() => setOpenMenu(false)}
-                className="capitalize text-xl  hover:scale-105  duration-200">
+                className=" text-xl hover:scale-105 duration-200">
                 {title}
               </Link>
             ))}
-          </nav>
+          </motion.nav>
         )}
       </div>
     </header>

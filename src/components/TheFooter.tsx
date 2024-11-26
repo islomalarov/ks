@@ -5,7 +5,7 @@ import { FunctionComponent } from 'react';
 const TheFooter: FunctionComponent = () => {
   return (
     <footer className="bg-black text-white h-20">
-      <div className="max-w-6xl mx-auto px-4 h-full flex flex-wrap gap-5 justify-center sm:justify-between items-center text-xl">
+      <div className="max-w-5xl mx-auto px-4 h-full flex flex-wrap gap-5 justify-center sm:justify-between items-center text-xl">
         <div>
           <p className=" text-gray-400"> &copy; 2024 Kompyuter Savodxonligi</p>
         </div>

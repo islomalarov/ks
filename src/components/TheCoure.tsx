@@ -47,7 +47,7 @@ const TheCourse = () => {
   return (
     <div id="course" className="target grid gap-10">
       <TheTitle title="Kurs kimlar uchun?" />
-      <div className="flex flex-wrap md:flex-nowrap justify-around text-center gap-10">
+      <div className="flex flex-wrap md:flex-nowrap justify-around text-center gap-5">
         {advantages.map((advantage, index) => (
           <div
             key={index}
@@ -60,7 +60,7 @@ const TheCourse = () => {
         ))}
       </div>
       <TheTitle title="Nega aynan bizni kursimizni o'qishingiz kerak?" />
-      <div className="flex justify-around flex-wrap gap-10 text-center pb-8">
+      <div className="flex justify-around flex-wrap gap-5 text-center pb-8">
         {shouldst.map((should, index) => (
           <div
             key={index}

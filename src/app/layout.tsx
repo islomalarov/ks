@@ -6,6 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ThemeProvider } from '@/components/ui/theme-provider';
 import TheNavbar from '@/components/TheNavbar';
 import TheFooter from '@/components/TheFooter';
+import Provider from '@/components/ui/provider';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -37,7 +38,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange>
           <TheNavbar />
-          {children}
+          {/* {children} */}
+          <Provider>{children}</Provider>
           <TheFooter />
           <Analytics />
           <SpeedInsights />
