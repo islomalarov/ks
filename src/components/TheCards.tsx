@@ -60,7 +60,8 @@ export function TheCards({ className, ...props }: CardProps) {
     <div id="tariffs" className="target grid items-center gap-3">
       <TheTitle title="Tariflar" />
       <p className="text-center text-xl">
-        O&apos;zingizga ma&apos;qul kelgan tarif bo&apos;yicha bir marotaba to&apos;lov qiling:
+        O&apos;zingizga ma&apos;qul kelgan tarif bo&apos;yicha <b>bir marotaba</b> to&apos;lov
+        qiling:
       </p>
       <div className="flex flex-wrap gap-4 justify-center">
         {tariffs.map((tariff, index) => (
