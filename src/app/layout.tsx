@@ -43,7 +43,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange>
           <TheNavbar />
-          {/* {children} */}
           <Provider>{children}</Provider>
           <TheFooter />
           <Analytics />

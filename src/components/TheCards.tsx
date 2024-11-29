@@ -89,7 +89,7 @@ export function TheCards({ className, ...props }: CardProps) {
             <CardFooter>
               <Link href="https://t.me/wmteam95" target="_blank" className="w-full">
                 <Button className="w-full">
-                  <Check /> Qo`&apos;shilish
+                  <Check /> Qo&apos;shilish
                 </Button>
               </Link>
             </CardFooter>

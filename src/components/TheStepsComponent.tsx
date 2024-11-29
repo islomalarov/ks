@@ -67,7 +67,7 @@ const TheStepsComponent = ({ sectionRef }: TheStepsComponentProps) => {
             className="text-center text-xl grid gap-5"
             key={step.number}
             index={step.number}>
-            <h3 className="font-bold">{step.title}</h3>
+            <h3 className="font-bold ">{step.title}</h3>
             {parseDescription(step.description)}
           </StepsContent>
         ))}
@@ -86,7 +86,7 @@ const TheStepsComponent = ({ sectionRef }: TheStepsComponentProps) => {
         </StepsList>
         {steps.map((step) => (
           <StepsContent
-            className="text-center grid content-center gap-5"
+            className="text-center text-xl grid content-center gap-5"
             key={step.number}
             index={step.number}>
             <h3 className="font-bold">{step.title}</h3>
