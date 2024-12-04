@@ -8,6 +8,7 @@ import TheHeroComponent from '@/components/TheHeroComponent';
 import TheStepsComponent from '@/components/TheStepsComponent';
 import TheTable from '@/components/TheTable';
 import TheTutor from '@/components/TheTutor';
+import TheVideoPlayer from '@/components/TheVideoPlayer';
 import { useRef } from 'react';
 
 export default function Home() {
@@ -21,8 +22,9 @@ export default function Home() {
         <TheCarousel />
         <TheTable />
         <TheTutor />
-        <TheStepsComponent sectionRef={stepsRef} />
         <TheCards />
+        <TheVideoPlayer videoId="kuwjgG3aSpo" />
+        <TheStepsComponent sectionRef={stepsRef} />
         <TheAccordion />
       </main>
     </div>
