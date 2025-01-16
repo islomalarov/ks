@@ -17,7 +17,7 @@ import Link from 'next/link';
 const tariffs = [
   {
     title: 'Mustaqil',
-    price: "150 000 so'm",
+    price: "200 000 so'm",
     lessons: [
       { decription: 'Videodarslar (+yangi)', includes: true },
       { decription: 'Darsga oid dastur va qo’llanmalar', includes: true },
@@ -29,7 +29,7 @@ const tariffs = [
   },
   {
     title: 'Sinov+',
-    price: "200 000 so'm",
+    price: "250 000 so'm",
     lessons: [
       { decription: 'Videodarslar (+yangi)', includes: true },
       { decription: 'Darsga oid dastur va qo’llanmalar', includes: true },
@@ -41,7 +41,7 @@ const tariffs = [
   },
   {
     title: 'Ustoz+ ',
-    price: "300 000 so'm",
+    price: "350 000 so'm",
     lessons: [
       { decription: 'Videodarslar (+yangi)', includes: true },
       { decription: 'Darsga oid dastur va qo’llanmalar', includes: true },
