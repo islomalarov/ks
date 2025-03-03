@@ -17,6 +17,7 @@ const TheNavbar = () => {
     { id: 3, title: 'Ustoz haqida', link: '#tutor' },
     { id: 4, title: 'Tariflar', link: '#tariffs' },
     { id: 5, title: 'FAQ', link: '#faqs' },
+    { id: 6, title: 'test', link: '/test' },
   ];
 
   return (
