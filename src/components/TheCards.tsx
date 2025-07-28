@@ -17,7 +17,7 @@ import Link from 'next/link';
 const tariffs = [
   {
     title: 'Mustaqil',
-    price: "160 000 so'm*",
+    price: "200 000 so'm*",
     lessons: [
       { description: 'Videodarslar (+yangi)', includes: true },
       { description: 'Darsga oid dastur va qo’llanmalar', includes: true },
@@ -29,7 +29,7 @@ const tariffs = [
   },
   {
     title: 'Sinov+',
-    price: "200 000 so'm*",
+    price: "250 000 so'm*",
     lessons: [
       { description: 'Videodarslar (+yangi)', includes: true },
       { description: 'Darsga oid dastur va qo’llanmalar', includes: true },
@@ -41,7 +41,7 @@ const tariffs = [
   },
   {
     title: 'Ustoz+ ',
-    price: "280 000 so'm*",
+    price: "350 000 so'm*",
     lessons: [
       { description: 'Videodarslar (+yangi)', includes: true },
       { description: 'Darsga oid dastur va qo’llanmalar', includes: true },
@@ -103,7 +103,8 @@ export function TheCards({ className, ...props }: CardProps) {
         ))}
       </div>
       <p className="text-center text-xl">
-        *2025-yil <b>Ramazon</b> oyi munosabati bilan <b>20%</b> li chegirma berilmoqda.
+        *Juma kunlari, maktab oʻquvchilariga <b>10%</b>, ayol va qizlar uchun <b>20%</b> lik
+        chegirmalarimiz mavjud.
       </p>
     </div>
   );
