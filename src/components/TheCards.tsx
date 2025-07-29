@@ -61,7 +61,7 @@ export function TheCards({ className, ...props }: CardProps) {
             <div>
               <CardHeader className="text-center">
                 <CardTitle className="text-xl">{tariff.title}</CardTitle>
-                <CardDescription>{tariff.price} so'm*</CardDescription>
+                <CardDescription>{tariff.price} so&apos;m*</CardDescription>
                 <Separator />
               </CardHeader>
               <CardContent className="grid gap-4">

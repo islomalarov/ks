@@ -39,10 +39,16 @@ export default function AdminPage() {
     }
   };
 
-  const handleLessonChange = (index: number, field: keyof Lesson, value: string | boolean) => {
-    const newLessons = [...lessons];
-    (newLessons[index] as any)[field] = value;
-    setLessons(newLessons);
+  const handleLessonChange = <K extends keyof Lesson>(
+    index: number,
+    field: K,
+    value: Lesson[K],
+  ) => {
+    setLessons(
+      lessons.map((lesson, i) =>
+        i === index ? { ...lesson, [field]: value } : lesson,
+      ),
+    );
   };
 
   const addLesson = () => {
@@ -156,7 +162,7 @@ export default function AdminPage() {
             </div>
           ))}
           <Button onClick={addLesson} variant="outline" size="sm">
-            + Dars qo'shish
+            + Dars qo&apos;shish
           </Button>
         </div>
         <div className="flex gap-2">
@@ -178,7 +184,7 @@ export default function AdminPage() {
             <div key={tariff.id} className="border p-4 rounded-lg flex flex-col justify-between">
               <div>
                 <h3 className="text-lg font-bold">{tariff.title}</h3>
-                <p className="text-gray-500 mb-2">{tariff.price} so'm</p>
+                <p className="text-gray-500 mb-2">{tariff.price} so&apos;m</p>
                 <ul className="list-disc pl-5">
                   {tariff.lessons.map((lesson, i) => (
                     <li
@@ -196,7 +202,7 @@ export default function AdminPage() {
                   <Edit className="h-4 w-4 mr-2" /> Tahrirlash
                 </Button>
                 <Button variant="destructive" size="sm" onClick={() => deleteTariff(tariff.id)}>
-                  <Trash className="h-4 w-4 mr-2" /> O'chirish
+                  <Trash className="h-4 w-4 mr-2" /> O&apos;chirish
                 </Button>
               </div>
             </div>
