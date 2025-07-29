@@ -53,39 +53,41 @@ export function TheCards({ className, ...props }: CardProps) {
         qiling:
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
-        {tariffs.map((tariff, index) => (
-          <Card
-            key={index}
-            className={cn('grid content-between shadow-black dark:shadow-white', className)}
-            {...props}>
-            <div>
-              <CardHeader className="text-center">
-                <CardTitle className="text-xl">{tariff.title}</CardTitle>
-                <CardDescription>{tariff.price} so&apos;m*</CardDescription>
-                <Separator />
-              </CardHeader>
-              <CardContent className="grid gap-4">
-                {tariff.lessons.map((lesson, lessonIndex) => (
-                  <div key={lessonIndex} className="flex gap-4 items-center">
-                    {lesson.includes ? (
-                      <Check className="text-green-500" />
-                    ) : (
-                      <X className="text-red-500" />
-                    )}
-                    <CardDescription>{lesson.description}</CardDescription>
-                  </div>
-                ))}
-              </CardContent>
-            </div>
-            <CardFooter className="">
-              <Link href="https://t.me/wmteam95" target="_blank" className="w-full">
-                <Button className="w-full">
-                  <Check /> Qo&apos;shilish
-                </Button>
-              </Link>
-            </CardFooter>
-          </Card>
-        ))}
+        {tariffs
+          .sort((a, b) => a.id - b.id)
+          .map((tariff, index) => (
+            <Card
+              key={index}
+              className={cn('grid content-between shadow-black dark:shadow-white', className)}
+              {...props}>
+              <div>
+                <CardHeader className="text-center">
+                  <CardTitle className="text-xl">{tariff.title}</CardTitle>
+                  <CardDescription>{tariff.price} so&apos;m*</CardDescription>
+                  <Separator />
+                </CardHeader>
+                <CardContent className="grid gap-4">
+                  {tariff.lessons.map((lesson, lessonIndex) => (
+                    <div key={lessonIndex} className="flex gap-4 items-center">
+                      {lesson.includes ? (
+                        <Check className="text-green-500" />
+                      ) : (
+                        <X className="text-red-500" />
+                      )}
+                      <CardDescription>{lesson.description}</CardDescription>
+                    </div>
+                  ))}
+                </CardContent>
+              </div>
+              <CardFooter className="">
+                <Link href="https://t.me/wmteam95" target="_blank" className="w-full">
+                  <Button className="w-full">
+                    <Check /> Qo&apos;shilish
+                  </Button>
+                </Link>
+              </CardFooter>
+            </Card>
+          ))}
       </div>
       <p className="text-center text-xl">
         *Juma kunlari, maktab oʻquvchilariga <b>10%</b>, ayol va qizlar uchun <b>20%</b> lik
