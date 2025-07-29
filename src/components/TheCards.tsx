@@ -1,5 +1,5 @@
+import { useEffect, useState } from 'react';
 import { Check, X } from 'lucide-react';
-
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import {
@@ -13,70 +13,55 @@ import {
 import { Separator } from '@/components/ui/separator';
 import TheTitle from './TheTitle';
 import Link from 'next/link';
+import { supabase } from '@/lib/supabaseClient';
 
-const tariffs = [
-  {
-    title: 'Mustaqil',
-    price: "200 000 so'm*",
-    lessons: [
-      { description: 'Videodarslar (+yangi)', includes: true },
-      { description: 'Darsga oid dastur va qo’llanmalar', includes: true },
-      { description: 'Darsga tegishli test va topshiriqlar', includes: false },
-      { description: 'Ustoz nazoratidagi savol-javob guruhi', includes: false },
-      { description: 'Ustoz bilan jonli darslar', includes: false },
-      { description: 'Turli musobaqa va imtihonlar', includes: false },
-    ],
-  },
-  {
-    title: 'Sinov+',
-    price: "250 000 so'm*",
-    lessons: [
-      { description: 'Videodarslar (+yangi)', includes: true },
-      { description: 'Darsga oid dastur va qo’llanmalar', includes: true },
-      { description: 'Darsga tegishli test va topshiriqlar', includes: true },
-      { description: 'Ustoz nazoratidagi savol-javob guruhi', includes: false },
-      { description: 'Ustoz bilan jonli darslar', includes: false },
-      { description: 'Turli musobaqa va imtihonlar', includes: false },
-    ],
-  },
-  {
-    title: 'Ustoz+ ',
-    price: "350 000 so'm*",
-    lessons: [
-      { description: 'Videodarslar (+yangi)', includes: true },
-      { description: 'Darsga oid dastur va qo’llanmalar', includes: true },
-      { description: 'Darsga tegishli test va topshiriqlar', includes: true },
-      { description: 'Ustoz nazoratidagi savol-javob guruhi', includes: true },
-      { description: 'Ustoz bilan jonli darslar', includes: true },
-      { description: 'Turli musobaqa va imtihonlar', includes: true },
-      { description: 'Sertifikat olish imkoniyati', includes: true },
-    ],
-  },
-];
+interface Lesson {
+  description: string;
+  includes: boolean;
+}
+
+interface Tariff {
+  id: number;
+  title: string;
+  price: string;
+  lessons: Lesson[];
+}
 
 type CardProps = React.ComponentProps<typeof Card>;
 
 export function TheCards({ className, ...props }: CardProps) {
+  const [tariffs, setTariffs] = useState<Tariff[]>([]);
+
+  useEffect(() => {
+    const fetchTariffs = async () => {
+      const { data, error } = await supabase.from('tariffs').select('*');
+      if (error) {
+        console.error('Error fetching tariffs:', error);
+      } else {
+        setTariffs(data as Tariff[]);
+      }
+    };
+
+    fetchTariffs();
+  }, []);
+
   return (
-    <div id="tariffs" className="target grid items-center gap-3">
+    <div id="tariffs" className="target grid gap-4">
       <TheTitle title="Tariflar" />
       <p className="text-center text-xl">
         O&apos;zingizga ma&apos;qul kelgan tarif bo&apos;yicha <b>bir marotaba</b> to&apos;lov
         qiling:
       </p>
-      <div className="flex flex-wrap gap-4 justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
         {tariffs.map((tariff, index) => (
           <Card
             key={index}
-            className={cn(
-              'max-w-[320px] grid content-between shadow-black dark:shadow-white',
-              className,
-            )}
+            className={cn('grid content-between shadow-black dark:shadow-white', className)}
             {...props}>
             <div>
               <CardHeader className="text-center">
                 <CardTitle className="text-xl">{tariff.title}</CardTitle>
-                <CardDescription>{tariff.price}</CardDescription>
+                <CardDescription>{tariff.price} so'm*</CardDescription>
                 <Separator />
               </CardHeader>
               <CardContent className="grid gap-4">

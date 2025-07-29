@@ -15,18 +15,16 @@ export default function Home() {
   const stepsRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="font-[family-name:var(--font-geist-sans)] max-w-5xl mx-auto px-4 min-h-screen">
-      <main className="flex flex-col gap-12 pt-20">
-        <TheHeroComponent sectionRef={stepsRef} />
-        <TheCourse />
-        <TheCarousel />
-        <TheTable />
-        <TheTutor />
-        <TheCards />
-        <TheVideoPlayer videoId="kuwjgG3aSpo" />
-        <TheStepsComponent sectionRef={stepsRef} />
-        <TheAccordion />
-      </main>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid gap-12">
+      <TheHeroComponent sectionRef={stepsRef} />
+      <TheCourse />
+      <TheCarousel />
+      <TheTable />
+      <TheTutor />
+      <TheCards />
+      <TheVideoPlayer videoId="kuwjgG3aSpo" />
+      <TheStepsComponent sectionRef={stepsRef} />
+      <TheAccordion />
     </div>
   );
 }

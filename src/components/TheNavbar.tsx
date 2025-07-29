@@ -4,13 +4,16 @@ import { useState } from 'react';
 import Link from 'next/link';
 import TheActions from './TheActions';
 import { motion } from 'framer-motion';
+
 const TheNavbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+
   const menuVariants = {
     hidden: { opacity: 0, height: 0 },
     visible: { opacity: 1, height: '100vh' },
     exit: { opacity: 0, height: 0 },
   };
+
   const links = [
     { id: 1, title: 'Kurs haqida', link: '#course' },
     { id: 2, title: "O'quv dasturi", link: '#table' },
@@ -20,8 +23,8 @@ const TheNavbar = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-white dark:bg-black  h-20 z-10">
-      <div className="max-w-5xl mx-auto px-4 flex gap-2 h-full justify-between items-center ">
+    <header className="fixed top-0 left-0 w-full bg-white dark:bg-black h-20 z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex gap-2 h-full justify-between items-center ">
         <Link href="/" className="text-3xl font-bold z-10">
           KS
         </Link>

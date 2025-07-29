@@ -37,7 +37,10 @@ const TheStepsComponent = ({ sectionRef }: TheStepsComponentProps) => {
         {description.split('[ustoz]').map((part, i) =>
           i === 1 ? (
             <span key={i}>
-              <Link href="https://t.me/wmteam95" target="_blank" className="underline">
+              <Link
+                href="https://t.me/wmteam95"
+                target="_blank"
+                className="underline cursor-pointer pointer hover:text-blue-500">
                 ustoz
               </Link>
               <span>{part}</span>
@@ -55,7 +58,7 @@ const TheStepsComponent = ({ sectionRef }: TheStepsComponentProps) => {
       <p className="text-center text-xl">
         Bizning kursimizga qo&apos;shilish ketma-ketligi quyidagicha:
       </p>
-      <StepsRoot className="max-w-5xl mx-auto hidden md:flex" defaultValue={1} count={4}>
+      <StepsRoot className=" mx-auto hidden md:flex" defaultValue={1} count={4}>
         <StepsList className="text-xl">
           <StepsItem index={0} />
           <StepsItem index={1} />
