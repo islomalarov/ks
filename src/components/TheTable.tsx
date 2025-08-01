@@ -34,7 +34,7 @@ const TheTable = () => {
   }, []);
 
   return (
-    <div id="table" className="target  ">
+    <div id="table" className="container mx-auto target  ">
       <TheTitle title="Video kursimizning o'quv dasturi" />
       <Table>
         {loading ? (

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Trash, Edit } from 'lucide-react';
+import { logout } from '../auth/actions';
 
 interface Lesson {
   description: string;
@@ -44,11 +45,7 @@ export default function AdminPage() {
     field: K,
     value: Lesson[K],
   ) => {
-    setLessons(
-      lessons.map((lesson, i) =>
-        i === index ? { ...lesson, [field]: value } : lesson,
-      ),
-    );
+    setLessons(lessons.map((lesson, i) => (i === index ? { ...lesson, [field]: value } : lesson)));
   };
 
   const addLesson = () => {
@@ -123,8 +120,10 @@ export default function AdminPage() {
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid gap-12 py-24">
-      <h2 className="text-2xl font-bold mb-4 ">Admin Panel</h2>
-
+      <div className="flex items-center justify-between p-4 border rounded-lg">
+        <h2 className="text-2xl font-bold">Admin Panel</h2>
+        <Button onClick={logout}>Logout</Button>
+      </div>
       <div className="mb-8 p-4 border rounded-lg">
         <h2 className="text-xl font-semibold mb-4">
           {editingTariff ? 'Tarifni Tahrirlash' : 'Yangi Tarif Yaratish'}
